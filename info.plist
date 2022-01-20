@@ -25,7 +25,7 @@
 	<key>createdby</key>
 	<string>Fede Calendino</string>
 	<key>description</key>
-	<string>Convert to different string cases 🔤️</string>
+	<string>Convert string to different cases 🔤️</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -102,7 +102,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Convert string to different cases 🔤️</string>
 	<key>uidata</key>
 	<dict>
 		<key>D59DEE14-1C5D-4B46-B0BB-B391F55658E9</key>
@@ -120,6 +120,8 @@
 			<integer>35</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string>v1.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/fedecalendino/</string>
 </dict>
