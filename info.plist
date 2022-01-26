@@ -44,7 +44,7 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
@@ -60,7 +60,16 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python ./main.py $@</string>
+				<string>if [ -z "$*" ]
+then
+	INPUT=$(pbpaste)
+else
+	INPUT="$*"
+fi
+
+
+python ./main.py $INPUT
+</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -68,7 +77,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Input the string to convert</string>
+				<string></string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -108,22 +117,20 @@
 		<key>D59DEE14-1C5D-4B46-B0BB-B391F55658E9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>315</integer>
+			<integer>285</integer>
 			<key>ypos</key>
-			<integer>35</integer>
+			<integer>90</integer>
 		</dict>
 		<key>F82A4097-2487-4884-9E55-DBE92602622E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>65</integer>
+			<integer>45</integer>
 			<key>ypos</key>
-			<integer>35</integer>
+			<integer>90</integer>
 		</dict>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>v1.0</string>
+	<string>1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/fedecalendino/</string>
 </dict>
