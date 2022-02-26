@@ -129,6 +129,8 @@ python ./main.py $INPUT
 			<integer>90</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>1.1</string>
 	<key>webaddress</key>

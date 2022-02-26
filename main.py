@@ -7,28 +7,27 @@ import stringcase
 
 
 CONVERTERS = [
-    ("const case", stringcase.constcase),
     ("lower case", stringcase.lowercase),
-    ("pascal case", lambda _: stringcase.pascalcase(_.replace(" ", "_"))),
-    ("path case", stringcase.pathcase),
+    ("upper case", stringcase.uppercase),
+    ("title case", stringcase.titlecase),
     ("slug case", stringcase.spinalcase),
     ("snake case", stringcase.snakecase),
-    ("title case", stringcase.titlecase),
-    ("upper case", stringcase.uppercase),
+    ("const case", stringcase.constcase),
+    ("path case", stringcase.pathcase),
+    ("pascal case", lambda _: stringcase.pascalcase(_.replace(" ", "_"))),
 ]
 
 
 def main(workflow):
-    string = " ".join(workflow.args).strip()
+    string = " ".join(workflow.args).lower().strip()
 
     for name, converter in CONVERTERS:
         value = converter(string)
 
         workflow.add_item(
             title=value,
-            subtitle="{name} --> {converted}".format(
+            subtitle=" > {name}".format(
                 name=name,
-                converted=converter(name),
             ),
             arg=value,
             valid=True,
