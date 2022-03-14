@@ -12,6 +12,13 @@
 
 import os
 
+# Workflow objects
+from .workflow import Workflow, manager
+from .workflow3 import Variables, Workflow3
+
+# Exceptions
+from .workflow import PasswordNotFound, KeychainError
+
 # Icons
 from .workflow import (
     ICON_ACCOUNT,
@@ -52,12 +59,6 @@ from .workflow import (
     MATCH_SUBSTRING,
 )
 
-# Exceptions
-from .workflow import PasswordNotFound, KeychainError
-
-# Workflow objects
-from .workflow import Workflow, manager
-from .workflow3 import Variables, Workflow3
 
 __title__ = "Alfred-Workflow"
 __version__ = open(os.path.join(os.path.dirname(__file__), "version")).read()

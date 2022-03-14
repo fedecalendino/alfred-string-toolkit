@@ -1,10 +1,7 @@
-# coding=utf-8
 import sys
 
-from workflow import Workflow
-
 import stringcase
-
+from workflow import Workflow
 
 CONVERTERS = [
     ("lower case", stringcase.lowercase),
@@ -26,15 +23,13 @@ def main(workflow):
 
         workflow.add_item(
             title=value,
-            subtitle=" > {name}".format(
-                name=name,
-            ),
+            subtitle=f" > {name}",
             arg=value,
             valid=True,
         )
 
 
-if __name__ == u"__main__":
+if __name__ == "__main__":
     wf = Workflow()
     wf.run(main)
     wf.send_feedback()
