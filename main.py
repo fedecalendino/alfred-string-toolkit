@@ -11,7 +11,7 @@ CONVERTERS = [
     ("snake case", stringcase.snakecase),
     ("const case", stringcase.constcase),
     ("path case", stringcase.pathcase),
-    ("pascal case", lambda _: stringcase.pascalcase(_.replace(" ", "_"))),
+    ("no spaces", lambda string: string.replace(" ", "")),
 ]
 
 
@@ -20,6 +20,9 @@ def main(workflow):
 
     for name, converter in CONVERTERS:
         value = converter(string)
+
+        if value == string:
+            continue
 
         workflow.add_item(
             title=value,

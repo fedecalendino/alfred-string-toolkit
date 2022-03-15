@@ -130,7 +130,7 @@ python3 ./main.py $INPUT
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>2.0</string>
+	<string>1.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/fedecalendino/</string>
 </dict>
