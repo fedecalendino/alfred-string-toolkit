@@ -132,6 +132,6 @@ python3 ./main.py $INPUT
 	<key>version</key>
 	<string>1.2</string>
 	<key>webaddress</key>
-	<string>https://github.com/fedecalendino/</string>
+	<string>https://github.com/fedecalendino/alfred-case-converter</string>
 </dict>
 </plist>

@@ -6,7 +6,7 @@ import re
 
 
 def camelcase(string):
-    """ Convert string into camel case.
+    """Convert string into camel case.
 
     Args:
         string: String to convert.
@@ -16,10 +16,12 @@ def camelcase(string):
 
     """
 
-    string = re.sub(r"\w[\s\W]+\w", '', str(string))
+    string = re.sub(r"\w[\s\W]+\w", "", str(string))
     if not string:
         return string
-    return lowercase(string[0]) + re.sub(r"[\-_\.\s]([a-z])", lambda matched: uppercase(matched.group(1)), string[1:])
+    return lowercase(string[0]) + re.sub(
+        r"[\-_\.\s]([a-z])", lambda matched: uppercase(matched.group(1)), string[1:]
+    )
 
 
 def capitalcase(string):
@@ -128,14 +130,17 @@ def sentencecase(string):
         string: Sentence cased string.
 
     """
-    joiner = ' '
+    joiner = " "
     string = re.sub(r"[\-_\.\s]", joiner, str(string))
     if not string:
         return string
-    return capitalcase(trimcase(
-        re.sub(r"[A-Z]", lambda matched: joiner +
-                                         lowercase(matched.group(0)), string)
-    ))
+    return capitalcase(
+        trimcase(
+            re.sub(
+                r"[A-Z]", lambda matched: joiner + lowercase(matched.group(0)), string
+            )
+        )
+    )
 
 
 def snakecase(string):
@@ -150,10 +155,12 @@ def snakecase(string):
 
     """
 
-    string = re.sub(r"[\-\.\s]", '_', str(string))
+    string = re.sub(r"[\-\.\s]", "_", str(string))
     if not string:
         return string
-    return lowercase(string[0]) + re.sub(r"[A-Z]", lambda matched: '_' + lowercase(matched.group(0)), string[1:])
+    return lowercase(string[0]) + re.sub(
+        r"[A-Z]", lambda matched: "_" + lowercase(matched.group(0)), string[1:]
+    )
 
 
 def spinalcase(string):
@@ -199,9 +206,7 @@ def titlecase(string):
 
     """
 
-    return ' '.join(
-        [capitalcase(word) for word in snakecase(string).split("_")]
-    )
+    return " ".join([capitalcase(word) for word in snakecase(string).split("_")])
 
 
 def trimcase(string):
