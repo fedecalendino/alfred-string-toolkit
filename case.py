@@ -26,7 +26,7 @@ def main(workflow):
 
         workflow.add_item(
             title=value,
-            subtitle=f" > {name}",
+            subtitle=f" > {name}('{string}')",
             arg=value,
             valid=True,
         )
