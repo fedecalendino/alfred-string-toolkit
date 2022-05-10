@@ -1,6 +1,8 @@
-### [Alfred Workflow](https://www.alfredapp.com/workflows/) to convert string to different cases 🔤️
+### [Alfred Workflow](https://www.alfredapp.com/workflows/) to apply different tools to strings 🔤️
 
 
-![clipboard example](./img/screenshots/clipboard.png)
+#### case : apply string case transformations
 
-![usage example](./img/screenshots/usage.png)
+![clipboard example](img/screenshots/case/clipboard.png)
+
+![usage example](img/screenshots/case/usage.png)

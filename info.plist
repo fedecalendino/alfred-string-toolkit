@@ -68,7 +68,7 @@ else
 fi
 
 
-python3 ./main.py $INPUT
+python3 ./case.py $INPUT
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -111,7 +111,7 @@ python3 ./main.py $INPUT
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Convert string to different cases 🔤️</string>
+	<string>Apply different tools to strings 🔤️</string>
 	<key>uidata</key>
 	<dict>
 		<key>D59DEE14-1C5D-4B46-B0BB-B391F55658E9</key>
