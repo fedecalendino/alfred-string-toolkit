@@ -21,7 +21,7 @@ def main(workflow):
     for name, converter in CONVERTERS:
         value = converter(string)
 
-        if value == string:
+        if name != "lower case" and value == string:
             continue
 
         workflow.add_item(

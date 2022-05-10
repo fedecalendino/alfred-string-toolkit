@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.github.fedecalendino.alfred-case-converter</string>
+	<string>com.github.fedecalendino.alfred-string-toolkit</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -25,11 +25,11 @@
 	<key>createdby</key>
 	<string>Fede Calendino</string>
 	<key>description</key>
-	<string>Convert string to different cases 🔤️</string>
+	<string>Apply different tools to strings 🔤️</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Case Converter</string>
+	<string>String Toolkit</string>
 	<key>objects</key>
 	<array>
 		<dict>
