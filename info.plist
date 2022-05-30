@@ -21,6 +21,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>258D56EF-ED51-4C66-814C-F5729892C3E3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>50C72E08-040D-4333-9548-C5335EB0D691</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>50C72E08-040D-4333-9548-C5335EB0D691</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D59DEE14-1C5D-4B46-B0BB-B391F55658E9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>8FA8B55A-D9A4-4D28-8D2C-93087ECB6031</key>
 		<array>
 			<dict>
@@ -119,25 +145,6 @@ python3 ./case.py $INPUT
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>D59DEE14-1C5D-4B46-B0BB-B391F55658E9</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -190,6 +197,25 @@ python3 ./hash.py $INPUT
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>8FA8B55A-D9A4-4D28-8D2C-93087ECB6031</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>D59DEE14-1C5D-4B46-B0BB-B391F55658E9</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -251,6 +277,92 @@ python3 ./info.py $INPUT
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>lipsum</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>if [ -z "$*" ]
+then
+	INPUT="1"
+else
+	INPUT="$*"
+fi
+
+
+python3 ./lipsum.py $INPUT</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>258D56EF-ED51-4C66-814C-F5729892C3E3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>50C72E08-040D-4333-9548-C5335EB0D691</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Apply different tools to strings 🔤️</string>
@@ -261,21 +373,35 @@ python3 ./info.py $INPUT
 			<key>xpos</key>
 			<integer>45</integer>
 			<key>ypos</key>
-			<integer>490</integer>
+			<integer>310</integer>
+		</dict>
+		<key>258D56EF-ED51-4C66-814C-F5729892C3E3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>45</integer>
+			<key>ypos</key>
+			<integer>420</integer>
+		</dict>
+		<key>50C72E08-040D-4333-9548-C5335EB0D691</key>
+		<dict>
+			<key>xpos</key>
+			<integer>295</integer>
+			<key>ypos</key>
+			<integer>420</integer>
 		</dict>
 		<key>8FA8B55A-D9A4-4D28-8D2C-93087ECB6031</key>
 		<dict>
 			<key>xpos</key>
 			<integer>45</integer>
 			<key>ypos</key>
-			<integer>290</integer>
+			<integer>200</integer>
 		</dict>
 		<key>D59DEE14-1C5D-4B46-B0BB-B391F55658E9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>540</integer>
 			<key>ypos</key>
-			<integer>290</integer>
+			<integer>250</integer>
 		</dict>
 		<key>F82A4097-2487-4884-9E55-DBE92602622E</key>
 		<dict>
