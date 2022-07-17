@@ -31,7 +31,7 @@ Apply a hash to string (from param or from clipboard)
 
 ![clipboard](./img/screenshots/hash-clipboard.png)
 
-Generate a random amount of lorem ipsum paragraphs, sentences or words. 
+Generate an amount of random lorem ipsum paragraphs, sentences or words.
 
 #### 🔀 lipsum
 

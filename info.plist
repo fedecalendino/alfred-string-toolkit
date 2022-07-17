@@ -126,7 +126,7 @@ fi
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>case [text: default=clipboard]</string>
 				<key>title</key>
 				<string>Change the case of a string (either from param or from clipboard)</string>
 				<key>type</key>
@@ -183,7 +183,7 @@ fi
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>base [text: default=clipboard]</string>
 				<key>title</key>
 				<string>Apply a base to string (from param or from clipboard)</string>
 				<key>type</key>
@@ -240,7 +240,7 @@ fi
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>hash [text: default=clipboard]</string>
 				<key>title</key>
 				<string>Apply a hash to string (from param or from clipboard)</string>
 				<key>type</key>
@@ -316,7 +316,7 @@ fi
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>str [text: default=clipboard]</string>
 				<key>title</key>
 				<string>Get information about a string (from param or from clipboard)</string>
 				<key>type</key>
@@ -373,9 +373,10 @@ fi
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>lipsum [amount: default=1]</string>
 				<key>title</key>
-				<string>lipsum [amount:1]</string>
+				<string>Generate a random amount of lorem ipsum paragraphs, sentences or words. 
+Generate an amount of random lorem ipsum paragraphs, sentences or words.</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -437,6 +438,8 @@ fi
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
+	<array/>
+	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
 	<string>1.4.0</string>
