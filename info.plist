@@ -128,7 +128,7 @@ fi
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string></string>
+				<string>Change the case of a string (either from param or from clipboard)</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -185,7 +185,7 @@ fi
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string></string>
+				<string>Apply a base to string (from param or from clipboard)</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -242,7 +242,7 @@ fi
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string></string>
+				<string>Apply a hash to string (from param or from clipboard)</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -318,7 +318,7 @@ fi
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string></string>
+				<string>Get information about a string (from param or from clipboard)</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -375,7 +375,7 @@ fi
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string></string>
+				<string>lipsum [amount:1]</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
