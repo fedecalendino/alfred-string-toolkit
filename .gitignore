@@ -2,6 +2,7 @@
 
 build/
 
+.venv/
 .idea/
 .tmp/
 
