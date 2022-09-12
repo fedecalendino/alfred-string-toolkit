@@ -18,8 +18,6 @@ stringcase = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 black = "latest"
-coverage = "latest"
-ddt = "latest"
 pyinstaller = "latest"
 
 [build-system]

@@ -120,7 +120,7 @@ else
 fi
 
 
-./dist/main case $INPUT</string>
+./dist/main/main case $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -177,7 +177,7 @@ else
 fi
 
 
-./dist/main base $INPUT</string>
+./dist/main/main base $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -234,7 +234,7 @@ else
 fi
 
 
-./dist/main hash $INPUT</string>
+./dist/main/main hash $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -310,7 +310,7 @@ else
 fi
 
 
-./dist/main info $INPUT</string>
+./dist/main/main info $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -367,7 +367,7 @@ else
 fi
 
 
-./dist/lipsum $INPUT</string>
+./dist/lipsum/lipsum $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
