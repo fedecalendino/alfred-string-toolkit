@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "String Toolkit"
-version = "1.5.0"
+version = "1.6.0"
 description = "Apply different tools to strings"
 documentation = "https://github.com/fedecalendino/alfred-string-toolkit/blob/main/README.md"
 homepage = "https://github.com/fedecalendino/alfred-string-toolkit"
@@ -18,7 +18,6 @@ stringcase = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 black = "latest"
-pyinstaller = "latest"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

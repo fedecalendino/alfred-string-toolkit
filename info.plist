@@ -120,7 +120,7 @@ else
 fi
 
 
-./dist/main/main case $INPUT</string>
+/usr/bin/python3 ./dist/main.py case $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -177,7 +177,7 @@ else
 fi
 
 
-./dist/main/main base $INPUT</string>
+/usr/bin/python3 ./dist/main.py base $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -234,7 +234,7 @@ else
 fi
 
 
-./dist/main/main hash $INPUT</string>
+/usr/bin/python3 ./dist/main.py hash $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -310,7 +310,7 @@ else
 fi
 
 
-./dist/main/main info $INPUT</string>
+/usr/bin/python3 ./dist/main.py info $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -367,7 +367,7 @@ else
 fi
 
 
-./dist/lipsum/lipsum $INPUT</string>
+/usr/bin/python3 ./dist/lipsum.py $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -442,7 +442,7 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.5.0</string>
+	<string>1.6.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/fedecalendino/alfred-string-toolkit</string>
 </dict>
