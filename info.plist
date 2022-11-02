@@ -100,7 +100,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>case</string>
+				<string>{var:case_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -157,7 +157,7 @@ fi
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>base</string>
+				<string>{var:base_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -214,7 +214,7 @@ fi
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>hash</string>
+				<string>{var:hash_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -290,7 +290,7 @@ fi
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>str</string>
+				<string>{var:str_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -347,7 +347,7 @@ fi
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>lipsum</string>
+				<string>{var:lipsum_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -438,9 +438,113 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
-	<key>variablesdontexport</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>case</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword to change the case of a string (either from param or from clipboard).</string>
+			<key>label</key>
+			<string>Change Case Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>case_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>base</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword to apply a base to string (from param or from clipboard).</string>
+			<key>label</key>
+			<string>Apply Base Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>base_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>hash</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword to apply a hash to string (from param or from clipboard).</string>
+			<key>label</key>
+			<string>Hash Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>hash_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>str</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword to get information about a string (from param or from clipboard).</string>
+			<key>label</key>
+			<string>String Info Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>str_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>lipsum</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword to generate a random amount of lorem ipsum paragraphs, sentences or words.</string>
+			<key>label</key>
+			<string>Lorem Ipsum Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>lipsum_keyword</string>
+		</dict>
+	</array>
 	<key>version</key>
 	<string>1.6.0</string>
 	<key>webaddress</key>
