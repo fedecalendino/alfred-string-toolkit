@@ -39,6 +39,7 @@ FUNCTIONS = {
         "__before__": lambda text: text,
         "__after__": lambda text: text,
         "lenght": len,
+        "words": lambda text: len(text.split(" ")),
     },
 }
 
