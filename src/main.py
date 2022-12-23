@@ -1,43 +1,47 @@
 import sys
-from base64 import b64encode, b32encode, b16encode
-from hashlib import sha512, sha384, sha256, sha224, sha1, md5
+import base64
+import hashlib
 
 import stringcase
 from pyflow import Workflow
 
+AFTER = "__after__"
+BEFORE = "__before__"
+
 FUNCTIONS = {
     "case": {
-        "__before__": lambda text: text,
-        "__after__": lambda text: text,
-        "lower case": stringcase.lowercase,
-        "upper case": stringcase.uppercase,
-        "title case": stringcase.titlecase,
-        "slug case": stringcase.spinalcase,
-        "snake case": stringcase.snakecase,
-        "const case": stringcase.constcase,
-        "path case": stringcase.pathcase,
-        "no spaces": lambda string: string.replace(" ", ""),
+        BEFORE: str.lower,
+        "lowercase": stringcase.lowercase,
+        "uppercase": stringcase.uppercase,
+        "titlecase": stringcase.titlecase,
+        "slugcase": stringcase.spinalcase,
+        "snakecase": stringcase.snakecase,
+        "constcase": stringcase.constcase,
+        "pathcase": stringcase.pathcase,
+        "nospaces": lambda string: string.replace(" ", ""),
     },
     "base": {
-        "__before__": lambda text: text.encode(),
-        "__after__": lambda digest: digest.decode(),
-        "base64": lambda text: b64encode(text),
-        "base32": lambda text: b32encode(text),
-        "base16": lambda text: b16encode(text),
+        AFTER: lambda digest: digest.decode("utf-8"),
+        "b64.decode": lambda text: base64.b64decode(text),
+        "b32.decode": lambda text: base64.b32decode(text.upper()),
+        "b16.decode": lambda text: base64.b16decode(text.upper()),
+        "b64.encode": lambda text: base64.b64encode(text.encode()),
+        "b32.encode": lambda text: base64.b32encode(text.encode()),
+        "b16.encode": lambda text: base64.b16encode(text.encode()),
     },
     "hash": {
-        "__before__": lambda text: text.encode(),
-        "__after__": lambda digest: digest.hexdigest(),
-        "sha512": lambda text: sha512(text),
-        "sha384": lambda text: sha384(text),
-        "sha256": lambda text: sha256(text),
-        "sha224": lambda text: sha224(text),
-        "sha1": lambda text: sha1(text),
-        "md5": lambda text: md5(text),
+        BEFORE: lambda text: text.encode(),
+        AFTER: lambda digest: digest.hexdigest(),
+        "SHA3-512": lambda text: hashlib.sha3_512(text),
+        "SHA3-384": lambda text: hashlib.sha3_384(text),
+        "SHA3-256": lambda text: hashlib.sha3_256(text),
+        "SHA3-224": lambda text: hashlib.sha3_224(text),
+        "MD5": lambda text: hashlib.md5(text),
     },
     "info": {
-        "__before__": lambda text: text,
-        "__after__": lambda text: text,
+        BEFORE: str.lower,
+        "digits": lambda text: len(list(filter(str.isdigit, text))),
+        "letters": lambda text: len(list(filter(str.islower, text))),
         "lenght": len,
         "words": lambda text: len(text.split(" ")),
     },
@@ -46,23 +50,26 @@ FUNCTIONS = {
 
 def main(workflow):
     command = workflow.args[0]
-    string = " ".join(workflow.args[1:]).lower().strip()
+    string = " ".join(workflow.args[1:]).strip()
 
-    before = FUNCTIONS[command]["__before__"]
-    after = FUNCTIONS[command]["__after__"]
+    before = FUNCTIONS[command].get(BEFORE, lambda _: _)
+    after = FUNCTIONS[command].get(AFTER, lambda _: _)
 
     for name, converter in FUNCTIONS[command].items():
-        if name.startswith("__"):
+        if name in {BEFORE, AFTER}:
             continue
 
-        value = after(converter(before(string)))
+        try:
+            value = after(converter(before(string)))
+        except:
+            continue
 
-        if name != "lower case" and value == string:
+        if name != "lowercase" and value == string:
             continue
 
         workflow.new_item(
             title=value,
-            subtitle=f" > {name.upper()}('{string}')",
+            subtitle=f" > {name}('{string}')",
             arg=value,
             valid=True,
         )
