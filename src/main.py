@@ -33,9 +33,13 @@ FUNCTIONS = {
         BEFORE: lambda text: text.encode(),
         AFTER: lambda digest: digest.hexdigest(),
         "SHA3-512": lambda text: hashlib.sha3_512(text),
+        "SHA-512": lambda text: hashlib.sha512(text),
         "SHA3-384": lambda text: hashlib.sha3_384(text),
+        "SHA-384": lambda text: hashlib.sha384(text),
         "SHA3-256": lambda text: hashlib.sha3_256(text),
+        "SHA-256": lambda text: hashlib.sha256(text),
         "SHA3-224": lambda text: hashlib.sha3_224(text),
+        "SHA-224": lambda text: hashlib.sha224(text),
         "MD5": lambda text: hashlib.md5(text),
     },
     "info": {

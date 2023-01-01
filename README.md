@@ -7,34 +7,48 @@
 
 #### 🔠 case
 
-Change the case of a string (either from param or from clipboard)
+Change the case of a string.
 
-![parameters](./img/screenshots/case-parameters.png)
+![parameters](screenshots/case-parameters.png)
 
-![clipboard](./img/screenshots/case-clipboard.png)
+![clipboard](screenshots/case-clipboard.png)
 
 
 #### *️⃣ base
 
-Apply a base to string (from param or from clipboard)
+Apply base 64/32/16 to a string.
 
-![parameters](./img/screenshots/base-parameters.png)
+![parameters](screenshots/base-parameters.png)
 
-![clipboard](./img/screenshots/base-clipboard.png)
+![clipboard](screenshots/base-clipboard.png)
+
+Also decode a base64/32/16 string when possible!
+
+![decode](screenshots/base-decode.png)
 
 
 #### #️⃣ hash
 
-Apply a hash to string (from param or from clipboard)
+Apply a hash to string.
 
-![parameters](./img/screenshots/hash-parameters.png)
+![parameters](screenshots/hash-parameters.png)
 
-![clipboard](./img/screenshots/hash-clipboard.png)
+![clipboard](screenshots/hash-clipboard.png)
 
-Generate an amount of random lorem ipsum paragraphs, sentences or words.
+
+#### ℹ️ info
+
+Get information about a string.
+
+![parameters](screenshots/info-parameters.png)
+
+![clipboard](screenshots/info-clipboard.png)
+
 
 #### 🔀 lipsum
 
-![default](./img/screenshots/lipsum-default.png)
+Generate random lorem ipsum paragraphs, sentences or words.
 
-![parameters](./img/screenshots/lipsum-parameters.png)
+![default](screenshots/lipsum-default.png)
+
+![parameters](screenshots/lipsum-parameters.png)
