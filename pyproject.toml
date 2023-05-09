@@ -12,12 +12,12 @@ authors = [
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
-alfred-pyflow = "latest"
+alfred-pyflow = "0.0.0"
 lorem-text = "^2.1"
 stringcase = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
-black = "latest"
+black = "0.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
