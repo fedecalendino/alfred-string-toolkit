@@ -16,7 +16,7 @@ alfred-pyflow = "0.0.0"
 lorem-text = "^2.1"
 stringcase = "^1.2.0"
 
-[tool.poetry.dev-dependencies]
+
 black = "0.0.0"
 
 [build-system]
