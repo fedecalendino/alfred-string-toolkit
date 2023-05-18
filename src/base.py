@@ -16,7 +16,7 @@ def encode(string: str, method: callable) -> str:
 
 
 def b64_decode(string: str) -> str:
-    return decode(string, base64.b64decode)
+    return decode(string + "===", base64.b64decode)
 
 
 def b32_decode(string: str) -> str:

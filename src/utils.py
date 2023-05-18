@@ -6,8 +6,8 @@ import base64
 def decodejwt(string: str) -> str:
     header, payload, signature = string.split(".")
 
-    header = base64.b64decode(header)
-    payload = base64.b64decode(payload)
+    header = base64.b64decode(header + "===")
+    payload = base64.b64decode(payload + "===")
 
     jwt = {
         "header": json.loads(header),

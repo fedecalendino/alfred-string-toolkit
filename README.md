@@ -63,3 +63,5 @@ Execute different string manipulation utilities on a string
 ![parameters](screenshots/utils-parameters.png)
 
 ![clipboard](screenshots/utils-clipboard.png)
+
+![decode jwt](screenshots/utils-decode-jwt.png)
