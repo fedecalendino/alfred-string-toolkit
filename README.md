@@ -5,7 +5,20 @@
 
 ### FUNCTIONS
 
-#### 🔠 case
+#### *️⃣ str base
+
+Apply a base to a string.
+
+![parameters](screenshots/base-parameters.png)
+
+![clipboard](screenshots/base-clipboard.png)
+
+Also decode a base when possible!
+
+![decode](screenshots/base-decode.png)
+
+
+#### 🔠 str case
 
 Change the case of a string.
 
@@ -14,29 +27,17 @@ Change the case of a string.
 ![clipboard](screenshots/case-clipboard.png)
 
 
-#### *️⃣ base
+#### #️⃣ str hash
 
-Apply base 64/32/16 to a string.
-
-![parameters](screenshots/base-parameters.png)
-
-![clipboard](screenshots/base-clipboard.png)
-
-Also decode a base64/32/16 string when possible!
-
-![decode](screenshots/base-decode.png)
-
-
-#### #️⃣ hash
-
-Apply a hash to string.
+Apply a hash to a string.
 
 ![parameters](screenshots/hash-parameters.png)
 
 ![clipboard](screenshots/hash-clipboard.png)
 
 
-#### ℹ️ info
+
+#### ℹ️ str info
 
 Get information about a string.
 
@@ -45,10 +46,20 @@ Get information about a string.
 ![clipboard](screenshots/info-clipboard.png)
 
 
-#### 🔀 lipsum
+#### 🔀 str lipsum
 
-Generate random lorem ipsum paragraphs, sentences or words.
+Generate a random amount of lorem ipsum paragraphs, sentences or words. 
 
 ![default](screenshots/lipsum-default.png)
 
 ![parameters](screenshots/lipsum-parameters.png)
+
+
+
+#### 🔣️ str utils
+
+Execute different string manipulation utilities on a string
+
+![parameters](screenshots/utils-parameters.png)
+
+![clipboard](screenshots/utils-clipboard.png)
