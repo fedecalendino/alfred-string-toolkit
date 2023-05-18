@@ -19,6 +19,7 @@ def words(string: str) -> int:
 name = "info"
 
 actions = {
+    "string": lambda string: string,
     "digits": digits,
     "letters": letters,
     "lenght": lenght,
