@@ -1,6 +1,6 @@
 ## ALFRED-STRING-TOOLKIT
 
-[Alfred Workflow](https://www.alfredapp.com/workflows/) to apply different tools to strings 🔤️
+[Alfred Workflow](https://www.alfredapp.com/workflows/) to run different sets of string manipulation tools 🔤️
 
 
 ### FUNCTIONS

@@ -34,6 +34,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>786A10FF-1AE9-4A79-9988-980A353A62A1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D513589-8380-402B-B367-3850E295CA4F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>898407A1-1A1D-4F93-883A-66024878F0F6</key>
 		<array>
 			<dict>
@@ -100,70 +113,13 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>{var:case_keyword}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>if [ -z "$*" ]
-then
-	INPUT=$(pbpaste)
-else
-	INPUT="$*"
-fi
-
-
-/usr/bin/python3 ./dist/main.py case $INPUT</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>case [text: default=clipboard]</string>
-				<key>title</key>
-				<string>Change the case of a string (either from param or from clipboard)</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>CA73E2F4-1BFF-4C67-B946-2D3B40572ED2</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
 				<string>{var:base_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
@@ -183,9 +139,9 @@ fi
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>base [text: default=clipboard]</string>
+				<string>{var:base_keyword} [text: default=clipboard]</string>
 				<key>title</key>
-				<string>Apply a base to string (from param or from clipboard)</string>
+				<string>Apply a base to a string</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -214,13 +170,70 @@ fi
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
+				<string>{var:case_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>if [ -z "$*" ]
+then
+	INPUT=$(pbpaste)
+else
+	INPUT="$*"
+fi
+
+
+/usr/bin/python3 ./dist/main.py case $INPUT</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:case_keyword} [text: default=clipboard]</string>
+				<key>title</key>
+				<string>Change the case of a string</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CA73E2F4-1BFF-4C67-B946-2D3B40572ED2</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
 				<string>{var:hash_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
@@ -240,9 +253,9 @@ fi
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>hash [text: default=clipboard]</string>
+				<string>{var:hash_keyword} [text: default=clipboard]</string>
 				<key>title</key>
-				<string>Apply a hash to string (from param or from clipboard)</string>
+				<string>Apply a hash to a string</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -290,13 +303,13 @@ fi
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>{var:str_keyword}</string>
+				<string>{var:info_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
@@ -316,9 +329,9 @@ fi
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>string [text: default=clipboard]</string>
+				<string>{var:info_keyword} [text: default=clipboard]</string>
 				<key>title</key>
-				<string>Get information about a string (from param or from clipboard)</string>
+				<string>Get information about a string</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -353,7 +366,7 @@ fi
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
@@ -373,7 +386,7 @@ fi
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>lipsum [amount: default=1]</string>
+				<string>{var:lipsum_keyword} [amount: default=1]</string>
 				<key>title</key>
 				<string>Generate a random amount of lorem ipsum paragraphs, sentences or words. 
 Generate an amount of random lorem ipsum paragraphs, sentences or words.</string>
@@ -389,9 +402,78 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:utils_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>if [ -z "$*" ]
+then
+	INPUT=$(pbpaste)
+else
+	INPUT="$*"
+fi
+
+
+/usr/bin/python3 ./dist/main.py utils $INPUT</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:tools_keyword} [text: default=clipboard]</string>
+				<key>title</key>
+				<string>Execute different string manipulation utilities on a string</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>786A10FF-1AE9-4A79-9988-980A353A62A1</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>Apply different tools to strings 🔤️</string>
+	<string>Run different sets of string manipulation tools 🔤️
+
+---
+
+* base¹: apply a base to a string.
+* case¹: change the case of a string.
+* hash¹: apply a hash to a string.
+* info¹: get information about a string.
+* lipsum: generate a random amount of lorem ipsum paragraphs, sentences or words. 
+* utils¹: execute different string manipulation utilities on a string
+
+
+¹: these will use your clipboard when no input is provided.</string>
 	<key>uidata</key>
 	<dict>
 		<key>0DAD4FE4-81CD-4F0C-9783-3C9A30ADEA9B</key>
@@ -404,9 +486,9 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 		<key>1D513589-8380-402B-B367-3850E295CA4F</key>
 		<dict>
 			<key>xpos</key>
-			<real>375</real>
+			<real>385</real>
 			<key>ypos</key>
-			<real>235</real>
+			<real>290</real>
 		</dict>
 		<key>771E477D-AC42-4FA2-BED2-7284772AF5DB</key>
 		<dict>
@@ -414,6 +496,13 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 			<real>30</real>
 			<key>ypos</key>
 			<real>235</real>
+		</dict>
+		<key>786A10FF-1AE9-4A79-9988-980A353A62A1</key>
+		<dict>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>565</real>
 		</dict>
 		<key>898407A1-1A1D-4F93-883A-66024878F0F6</key>
 		<dict>
@@ -427,14 +516,14 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>15</real>
+			<real>125</real>
 		</dict>
 		<key>D51A7DEE-64EE-4C5D-AB29-1E0BED407F4F</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>125</real>
+			<real>15</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -443,7 +532,7 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>case</string>
+				<string>str base</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
@@ -452,30 +541,9 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Keyword to change the case of a string (either from param or from clipboard).</string>
+			<string></string>
 			<key>label</key>
-			<string>Change Case Keyword</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>case_keyword</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>base</string>
-				<key>placeholder</key>
-				<string></string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Keyword to apply a base to string (from param or from clipboard).</string>
-			<key>label</key>
-			<string>Apply Base Keyword</string>
+			<string>base</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
@@ -485,7 +553,7 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>hash</string>
+				<string>str case</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
@@ -494,9 +562,30 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Keyword to apply a hash to string (from param or from clipboard).</string>
+			<string></string>
 			<key>label</key>
-			<string>Hash Keyword</string>
+			<string>case</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>case_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>str hash</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>hash</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
@@ -506,7 +595,7 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>str</string>
+				<string>str info</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
@@ -515,19 +604,19 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Keyword to get information about a string (from param or from clipboard).</string>
+			<string></string>
 			<key>label</key>
-			<string>String Info Keyword</string>
+			<string>info</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
-			<string>str_keyword</string>
+			<string>info_keyword</string>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>lipsum</string>
+				<string>str lipsum</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
@@ -536,17 +625,38 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Keyword to generate a random amount of lorem ipsum paragraphs, sentences or words.</string>
+			<string></string>
 			<key>label</key>
-			<string>Lorem Ipsum Keyword</string>
+			<string>lorem ipsum</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
 			<string>lipsum_keyword</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>str utils</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>utils</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>utils_keyword</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>1.7.0</string>
+	<string>2.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/fedecalendino/alfred-string-toolkit</string>
 </dict>
