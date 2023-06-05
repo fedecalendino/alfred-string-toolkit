@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "String Toolkit"
-version = "2.0.1"
+version = "2.0.2"
 description = "Run different sets of string manipulation tools"
 documentation = "https://github.com/fedecalendino/alfred-string-toolkit/blob/main/README.md"
 homepage = "https://github.com/fedecalendino/alfred-string-toolkit"

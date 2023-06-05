@@ -36,7 +36,6 @@ Apply a hash to a string.
 ![clipboard](screenshots/hash-clipboard.png)
 
 
-
 #### ℹ️ str info
 
 Get information about a string.
@@ -53,7 +52,6 @@ Generate a random amount of lorem ipsum paragraphs, sentences or words.
 ![default](screenshots/lipsum-default.png)
 
 ![parameters](screenshots/lipsum-parameters.png)
-
 
 
 #### 🔣️ str utils

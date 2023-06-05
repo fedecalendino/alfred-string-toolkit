@@ -6,17 +6,17 @@ from pyflow import Workflow
 CONVERTERS = [
     (
         "paragraph",
-        "2 to 4 sentences, first one is always 'lorem ipsum dolor sit amet...'",
+        "paragraphs will contain 2 to 4 sentences, first one is always 'lorem ipsum dolor sit amet...'",
         lambda count: lorem.paragraphs(count),
     ),
     (
         "sentence",
-        "ends in either a period or question mark, and commas are added at random.",
+        "sentences will end in either a period or question mark (commas are added at random).",
         lambda count: "\n".join(lorem.sentence() for _ in range(count)),
     ),
     (
         "word",
-        "list of words separated by a single space.",
+        "words separated by a single space.",
         lambda count: lorem.words(count),
     ),
 ]
@@ -32,11 +32,13 @@ def main(workflow):
         raise Exception("Expected an integer between 1 and 1000.")
 
     for name, description, converter in CONVERTERS:
+        title = f"Generate {count} {name}{('s', '')[count == 1]}"
+        subtitle = description
         value = converter(count)
 
         workflow.new_item(
-            title=value,
-            subtitle=f"{count} {name}{('s', '')[count == 1]}: ".upper() + description,
+            title=title.upper(),
+            subtitle=subtitle,
             arg=value,
             valid=True,
         )
