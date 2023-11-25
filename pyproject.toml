@@ -12,7 +12,7 @@ authors = [
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
-alfred-pyflow = "^0.4.5"
+alfred-pyflow = "0.4.6"
 lorem-text = "^2.1"
 stringcase = "^1.2.0"
 black = "^23.3.0"
