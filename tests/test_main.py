@@ -89,6 +89,18 @@ class TestMain(WorklowTestCase):
             "signature": "SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
         }
 
-        expected = {" > decode-jwt": json.dumps(decoded, indent=2)}
+        expected = {
+            " > decode-jwt": json.dumps(decoded, indent=2),
+        }
 
         self.check("utils", string, expected)
+
+    def test_cardano(self):
+        string = "e7514e65f977ee4b84a8e62e7d97ea2e5c11682dfe1444d8a14e74db4672616e6b656e737465696e303030"
+        expected = {
+            " > policy_id": "e7514e65f977ee4b84a8e62e7d97ea2e5c11682dfe1444d8a14e74db",
+            " > asset_name": "4672616e6b656e737465696e303030",
+            " > decoded_asset_name": "Frankenstein000",
+        }
+
+        self.check("cardano", string, expected)

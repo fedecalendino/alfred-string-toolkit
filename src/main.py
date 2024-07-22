@@ -1,14 +1,48 @@
 import sys
 
-from pyflow import Workflow
+from pyflow import Workflow, Item
 
 import base
 import case
+import cardano
 import hash
 import info
 import utils
 
-TOOLKITS = {toolkit.name: toolkit for toolkit in [base, case, hash, info, utils]}
+TOOLS = [
+    base,
+    case,
+    hash,
+    info,
+    utils,
+    cardano,
+]
+
+TOOLKITS = {toolkit.name: toolkit for toolkit in TOOLS}
+
+
+def run_action(workflow, name: str, action: callable, string: str):
+    try:
+        result = action(string)
+    except:
+        return None
+
+    if result is None:
+        return None
+
+    if isinstance(result, tuple):
+        title = result[0]
+        arg = result[1]
+    else:
+        title = result
+        arg = result
+
+    workflow.new_item(
+        title=title,
+        subtitle=f" > {name}('{string}')",
+        arg=arg,
+        valid=True,
+    )
 
 
 def main(workflow):
@@ -17,34 +51,14 @@ def main(workflow):
 
     string = " ".join(workflow.args[1:]).strip()
 
-    found = 0
-
     for name, action in toolkit.actions.items():
-        try:
-            result = action(string)
-        except Exception as exc:
-            continue
-
-        if result is None:
-            continue
-
-        if isinstance(result, tuple):
-            title = result[0]
-            arg = result[1]
+        if isinstance(action, dict):
+            for subname, subaction in action.items():
+                run_action(workflow, f"{name}.{subname}", subaction, string)
         else:
-            title = result
-            arg = result
+            run_action(workflow, name, action, string)
 
-        workflow.new_item(
-            title=title,
-            subtitle=f" > {name}('{string}')",
-            arg=arg,
-            valid=True,
-        )
-
-        found += 1
-
-    if not found:
+    if len(workflow._items) == 0:
         workflow.new_item(
             title=f"No {toolkit.name} tools available",
             valid=False,

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "String Toolkit"
-version = "2.0.2"
+version = "2.1.0"
 description = "Run different sets of string manipulation tools"
 documentation = "https://github.com/fedecalendino/alfred-string-toolkit/blob/main/README.md"
 homepage = "https://github.com/fedecalendino/alfred-string-toolkit"
@@ -12,10 +12,10 @@ authors = [
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
-alfred-pyflow = "0.4.6"
+alfred-pyflow = "0.4.7"
 lorem-text = "^2.1"
 stringcase = "^1.2.0"
-black = "^23.3.0"
+black = "^24.4.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -47,6 +47,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>80A0B3CF-7CB5-4D29-8182-4AE4E6BCEE18</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D513589-8380-402B-B367-3850E295CA4F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>898407A1-1A1D-4F93-883A-66024878F0F6</key>
 		<array>
 			<dict>
@@ -97,6 +110,63 @@
 	<string>String Toolkit</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:case_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>if [ -z "$*" ]
+then
+	INPUT=$(pbpaste)
+else
+	INPUT="$*"
+fi
+
+
+/usr/bin/python3 ./dist/main.py case $INPUT</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:case_keyword} [text: default=clipboard]</string>
+				<key>title</key>
+				<string>Change the case of a string</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CA73E2F4-1BFF-4C67-B946-2D3B40572ED2</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -170,7 +240,7 @@ fi
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>{var:case_keyword}</string>
+				<string>{var:info_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -190,15 +260,15 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/main.py case $INPUT</string>
+/usr/bin/python3 ./dist/main.py info $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>{var:case_keyword} [text: default=clipboard]</string>
+				<string>{var:info_keyword} [text: default=clipboard]</string>
 				<key>title</key>
-				<string>Change the case of a string</string>
+				<string>Get information about a string</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -207,7 +277,7 @@ fi
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>CA73E2F4-1BFF-4C67-B946-2D3B40572ED2</string>
+			<string>0DAD4FE4-81CD-4F0C-9783-3C9A30ADEA9B</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -303,7 +373,7 @@ fi
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>{var:info_keyword}</string>
+				<string>{var:utils_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -323,15 +393,15 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/main.py info $INPUT</string>
+/usr/bin/python3 ./dist/main.py utils $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>{var:info_keyword} [text: default=clipboard]</string>
+				<string>{var:utils_keyword} [text: default=clipboard]</string>
 				<key>title</key>
-				<string>Get information about a string</string>
+				<string>Execute different string manipulation utilities on a string</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -340,7 +410,7 @@ fi
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>0DAD4FE4-81CD-4F0C-9783-3C9A30ADEA9B</string>
+			<string>786A10FF-1AE9-4A79-9988-980A353A62A1</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -418,7 +488,7 @@ Generate an amount of random lorem ipsum paragraphs, sentences or words.</string
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>{var:utils_keyword}</string>
+				<string>{var:cardano_keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -438,15 +508,15 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/main.py utils $INPUT</string>
+/usr/bin/python3 ./dist/main.py cardano $INPUT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>{var:tools_keyword} [text: default=clipboard]</string>
+				<string>{var:cardano_keyword} [text: default=clipboard]</string>
 				<key>title</key>
-				<string>Execute different string manipulation utilities on a string</string>
+				<string>Execute different cardano utilities on a string</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -455,7 +525,7 @@ fi
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>786A10FF-1AE9-4A79-9988-980A353A62A1</string>
+			<string>80A0B3CF-7CB5-4D29-8182-4AE4E6BCEE18</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -479,44 +549,51 @@ fi
 		<key>0DAD4FE4-81CD-4F0C-9783-3C9A30ADEA9B</key>
 		<dict>
 			<key>xpos</key>
-			<real>30</real>
+			<real>165</real>
 			<key>ypos</key>
-			<real>345</real>
+			<real>130</real>
 		</dict>
 		<key>1D513589-8380-402B-B367-3850E295CA4F</key>
 		<dict>
 			<key>xpos</key>
-			<real>385</real>
+			<real>445</real>
 			<key>ypos</key>
-			<real>290</real>
+			<real>175</real>
 		</dict>
 		<key>771E477D-AC42-4FA2-BED2-7284772AF5DB</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>235</real>
+			<real>130</real>
 		</dict>
 		<key>786A10FF-1AE9-4A79-9988-980A353A62A1</key>
 		<dict>
 			<key>xpos</key>
+			<real>165</real>
+			<key>ypos</key>
+			<real>245</real>
+		</dict>
+		<key>80A0B3CF-7CB5-4D29-8182-4AE4E6BCEE18</key>
+		<dict>
+			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>360</real>
 		</dict>
 		<key>898407A1-1A1D-4F93-883A-66024878F0F6</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>455</real>
+			<real>245</real>
 		</dict>
 		<key>CA73E2F4-1BFF-4C67-B946-2D3B40572ED2</key>
 		<dict>
 			<key>xpos</key>
-			<real>30</real>
+			<real>165</real>
 			<key>ypos</key>
-			<real>125</real>
+			<real>15</real>
 		</dict>
 		<key>D51A7DEE-64EE-4C5D-AB29-1E0BED407F4F</key>
 		<dict>
@@ -654,9 +731,30 @@ fi
 			<key>variable</key>
 			<string>utils_keyword</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>str cardano</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>cardano</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>cardano_keyword</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>2.0.2</string>
+	<string>2.1.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/fedecalendino/alfred-string-toolkit</string>
 </dict>
