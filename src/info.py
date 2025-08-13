@@ -1,27 +1,21 @@
-def digits(string: str) -> int:
-    string = string.lower()
-    return len(list(filter(str.isdigit, string)))
+from classes import Action
 
 
-def letters(string: str) -> int:
-    string = string.lower()
-    return len(list(filter(str.islower, string)))
+class InfoAction(Action):
+    def __init__(self, name: str, method: callable):
+        super().__init__(name)
+        self.method = method
 
-
-def lenght(string: str) -> int:
-    return len(string)
-
-
-def words(string: str) -> int:
-    return len(string.split(" "))
+    def __call__(self, string: str) -> int:
+        return self.method(string)
 
 
 name = "info"
 
-actions = {
-    "string": lambda string: string,
-    "digits": digits,
-    "letters": letters,
-    "lenght": lenght,
-    "words": words,
-}
+actions = [
+    InfoAction("string", lambda s: s),
+    InfoAction("digits", lambda s: len(list(filter(str.isdigit, s.lower())))),
+    InfoAction("letters", lambda s: len(list(filter(str.islower, s.lower())))),
+    InfoAction("lenght", lambda s: len(s)),
+    InfoAction("words", lambda s: len(s.split(" "))),
+]

@@ -52,11 +52,11 @@ class TestMain(WorklowTestCase):
     def test_hash(self):
         string = "this is a test"
         expected = {
-            " > SHA3-512": "a68bf14c14f2f81a3ed31a849cc104555834af7dd7cc586829debd330641d9f799d5f261201a54802157f40aa3435b495f2f060831c28edd79cf0bf43938a3ac",
-            " > SHA-512": "7d0a8468ed220400c0b8e6f335baa7e070ce880a37e2ac5995b9a97b809026de626da636ac7365249bb974c719edf543b52ed286646f437dc7f810cc2068375c",
-            " > SHA3-256": "b69ced483a79e37e13372af7cdd9e6757542fe91be6e6d05b654fa19dab9056d",
-            " > SHA-256": "2e99758548972a8e8822ad47fa1017ff72f06f3ff6a016851f45c398732bc50c",
-            " > MD5": "54b0c58c7ce9f2a8b551351102ee0938",
+            " > sha3_512": "a68bf14c14f2f81a3ed31a849cc104555834af7dd7cc586829debd330641d9f799d5f261201a54802157f40aa3435b495f2f060831c28edd79cf0bf43938a3ac",
+            " > sha512": "7d0a8468ed220400c0b8e6f335baa7e070ce880a37e2ac5995b9a97b809026de626da636ac7365249bb974c719edf543b52ed286646f437dc7f810cc2068375c",
+            " > sha3_256": "b69ced483a79e37e13372af7cdd9e6757542fe91be6e6d05b654fa19dab9056d",
+            " > sha256": "2e99758548972a8e8822ad47fa1017ff72f06f3ff6a016851f45c398732bc50c",
+            " > md5": "54b0c58c7ce9f2a8b551351102ee0938",
         }
 
         self.check("hash", string, expected)

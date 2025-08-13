@@ -1,24 +1,19 @@
 import sys
 
-from pyflow import Workflow, Item
+from pyflow import Workflow
 
 import base
-import case
 import cardano
+import case
 import hash
 import info
 import utils
 
-TOOLS = [
-    base,
-    case,
-    hash,
-    info,
-    utils,
-    cardano,
-]
 
-TOOLKITS = {toolkit.name: toolkit for toolkit in TOOLS}
+TOOLKITS = {
+    toolkit.name: {action.name: action for action in toolkit.actions}
+    for toolkit in [base, case, hash, info, utils, cardano]
+}
 
 
 def run_action(workflow, name: str, action: callable, string: str):
@@ -30,16 +25,23 @@ def run_action(workflow, name: str, action: callable, string: str):
     if result is None:
         return None
 
-    if isinstance(result, tuple):
-        title = result[0]
-        arg = result[1]
+    title = result
+    arg = result
+
+    if "\n" in string:
+        subtitle = " > {name}([{strings}])".format(
+            name=name,
+            strings=", ".join(map(lambda s: f"'{s}'", string.split("\n"))),
+        )
     else:
-        title = result
-        arg = result
+        subtitle = " > {name}('{string}')".format(
+            name=name,
+            string=string,
+        )
 
     workflow.new_item(
         title=title,
-        subtitle=f" > {name}('{string}')",
+        subtitle=subtitle,
         arg=arg,
         valid=True,
     )
@@ -51,7 +53,7 @@ def main(workflow):
 
     string = " ".join(workflow.args[1:]).strip()
 
-    for name, action in toolkit.actions.items():
+    for name, action in toolkit.items():
         if isinstance(action, dict):
             for subname, subaction in action.items():
                 run_action(workflow, f"{name}.{subname}", subaction, string)

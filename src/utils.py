@@ -3,51 +3,88 @@ import base64
 import json
 import urllib.parse
 
-
-def unquote(string: str) -> str:
-    return urllib.parse.unquote(string)
+from classes import Action
 
 
-def decodejwt(string: str) -> str:
-    header, payload, signature = string.split(".")
+class SortAction(Action):
+    def __init__(self, reverse: bool = False):
+        super().__init__("sort" if not reverse else "reverse")
 
-    header = base64.b64decode(header + "===")
-    payload = base64.b64decode(payload + "===")
+        self.reverse: bool = reverse
 
-    jwt = {
-        "header": json.loads(header),
-        "payload": json.loads(payload),
-        "signature": signature,
-    }
+    def __call__(self, string: str) -> str:
+        lines = string.split("\n")
+        lines.sort(reverse=self.reverse)
 
-    return json.dumps(jwt), json.dumps(jwt, indent=2)
+        return ", ".join(lines), "\n".join(lines)
 
 
-def dict_to_json(string: str) -> str:
-    dictionary = ast.literal_eval(string)
+class UnquoteAction(Action):
+    def __init__(self):
+        super().__init__("unquote")
 
-    if not isinstance(dictionary, dict):
-        return None
-
-    return json.dumps(dictionary), json.dumps(dictionary, indent=2)
-
-
-def indent_json(string: str) -> str:
-    dictionary = json.loads(string)
-    return json.dumps(dictionary), json.dumps(dictionary, indent=2)
+    def __call__(self, string: str) -> str:
+        return urllib.parse.unquote(string)
 
 
-def json_to_dict(string: str) -> str:
-    dictionary = json.loads(string)
-    return str(dictionary)
+class DecodeJWTAction(Action):
+    def __init__(self):
+        super().__init__("decode-jwt")
+
+    def __call__(self, string: str) -> str:
+        header, payload, signature = string.split(".")
+
+        header = base64.b64decode(header + "===")
+        payload = base64.b64decode(payload + "===")
+
+        jwt = {
+            "header": json.loads(header),
+            "payload": json.loads(payload),
+            "signature": signature,
+        }
+
+        return json.dumps(jwt, indent=2)
+
+
+class DictToJsonAction(Action):
+    def __init__(self):
+        super().__init__("dict-to-json")
+
+    def __call__(self, string: str) -> str:
+        dictionary = ast.literal_eval(string)
+
+        if not isinstance(dictionary, dict):
+            return None
+
+        return json.dumps(dictionary, indent=2)
+
+
+class IndentJsonAction(Action):
+    def __init__(self):
+        super().__init__("indent-json")
+
+    def __call__(self, string: str) -> str:
+        dictionary = json.loads(string)
+        return json.dumps(dictionary, indent=2)
+
+
+class JsonToDictAction(Action):
+    def __init__(self):
+        super().__init__("json-to-dict")
+
+    def __call__(self, string: str) -> str:
+        dictionary = json.loads(string)
+        return str(dictionary)
 
 
 name = "utils"
 
-actions = {
-    "unquote": unquote,
-    "decode-jwt": decodejwt,
-    "dict-to-json": dict_to_json,
-    "indent-json": indent_json,
-    "json-to-dict": json_to_dict,
-}
+actions = [
+    SortAction(),
+    SortAction(reverse=True),
+    UnquoteAction(),
+    DecodeJWTAction(),
+    DictToJsonAction(),
+    JsonToDictAction(),
+    IndentJsonAction(),
+]

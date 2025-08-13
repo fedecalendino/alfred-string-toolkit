@@ -146,7 +146,7 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/main.py case $INPUT</string>
+/usr/bin/python3 ./dist/main.py case "$INPUT"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -203,7 +203,7 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/main.py base $INPUT</string>
+/usr/bin/python3 ./dist/main.py base "$INPUT"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -260,7 +260,7 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/main.py info $INPUT</string>
+/usr/bin/python3 ./dist/main.py info "$INPUT"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -317,7 +317,7 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/main.py hash $INPUT</string>
+/usr/bin/python3 ./dist/main.py hash "$INPUT"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -393,7 +393,7 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/main.py utils $INPUT</string>
+/usr/bin/python3 ./dist/main.py utils "$INPUT"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -450,7 +450,7 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/lipsum.py $INPUT</string>
+/usr/bin/python3 ./dist/lipsum.py "$INPUT"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -458,7 +458,7 @@ fi
 				<key>subtext</key>
 				<string>{var:lipsum_keyword} [amount: default=1]</string>
 				<key>title</key>
-				<string>Generate a random amount of lorem ipsum paragraphs, sentences or words. 
+				<string>Generate a random amount of lorem ipsum paragraphs, sentences or words.
 Generate an amount of random lorem ipsum paragraphs, sentences or words.</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -508,7 +508,7 @@ else
 fi
 
 
-/usr/bin/python3 ./dist/main.py cardano $INPUT</string>
+/usr/bin/python3 ./dist/main.py cardano "$INPUT"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -754,7 +754,7 @@ fi
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2.1.0</string>
+	<string>2.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/fedecalendino/alfred-string-toolkit</string>
 </dict>

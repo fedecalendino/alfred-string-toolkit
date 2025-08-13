@@ -1,56 +1,32 @@
 import stringcase
 
-
-def change_case(string: str, function: callable) -> str:
-    result = function(string.lower())
-
-    if result == string:
-        return None
-
-    return result
+from classes import Action
 
 
-def lowercase(string: str) -> str:
-    return string.lower()
+class CaseAction(Action):
+    def __init__(self, name: str, function: callable):
+        super().__init__(name)
 
+        self.function = function
 
-def uppercase(string: str) -> str:
-    return change_case(string, stringcase.uppercase)
+    def __call__(self, string: str) -> str:
+        result = self.function(string.lower())
 
+        if result == string:
+            return None
 
-def titlecase(string: str) -> str:
-    return change_case(string, stringcase.titlecase)
-
-
-def slugcase(string: str) -> str:
-    return change_case(string, stringcase.spinalcase)
-
-
-def snakecase(string: str) -> str:
-    return change_case(string, stringcase.snakecase)
-
-
-def constcase(string: str) -> str:
-    return change_case(string, stringcase.constcase)
-
-
-def pathcase(string: str) -> str:
-    return change_case(string, stringcase.pathcase)
-
-
-def nospaces(string: str) -> str:
-    return change_case(string, lambda s: s.replace(" ", ""))
+        return result
 
 
 name = "case"
 
-actions = {
-    "lowercase": lowercase,
-    "uppercase": uppercase,
-    "titlecase": titlecase,
-    "slugcase": slugcase,
-    "snakecase": snakecase,
-    "constcase": constcase,
-    "pathcase": pathcase,
-    "nospaces": nospaces,
-}
+actions = [
+    CaseAction("lowercase", stringcase.lowercase),
+    CaseAction("uppercase", stringcase.uppercase),
+    CaseAction("titlecase", stringcase.titlecase),
+    CaseAction("slugcase", stringcase.spinalcase),
+    CaseAction("snakecase", stringcase.snakecase),
+    CaseAction("constcase", stringcase.constcase),
+    CaseAction("pathcase", stringcase.pathcase),
+    CaseAction("nospaces", lambda s: s.replace(" ", "")),
+]

@@ -1,58 +1,29 @@
 import hashlib
 
-
-def hash(string: str, method: callable) -> str:
-    string = string.encode()
-    digest = method(string)
-    return digest.hexdigest()
+from classes import Action
 
 
-def sha3_512(string: bytes) -> str:
-    return hash(string, hashlib.sha3_512)
+class HashAction(Action):
+    def __init__(self, method: callable):
+        super().__init__(method.__name__.replace("openssl_", ""))
+        self.method = method
 
-
-def sha_512(string: bytes) -> str:
-    return hash(string, hashlib.sha512)
-
-
-def sha3_384(string: bytes) -> str:
-    return hash(string, hashlib.sha3_384)
-
-
-def sha_384(string: bytes) -> str:
-    return hash(string, hashlib.sha384)
-
-
-def sha3_256(string: bytes) -> str:
-    return hash(string, hashlib.sha3_256)
-
-
-def sha_256(string: bytes) -> str:
-    return hash(string, hashlib.sha256)
-
-
-def sha3_224(string: bytes) -> str:
-    return hash(string, hashlib.sha3_224)
-
-
-def sha_224(string: bytes) -> str:
-    return hash(string, hashlib.sha224)
-
-
-def md5(string: bytes) -> str:
-    return hash(string, hashlib.md5)
+    def __call__(self, string: str) -> str:
+        string = string.encode()
+        digest = self.method(string)
+        return digest.hexdigest()
 
 
 name = "hash"
 
-actions = {
-    "SHA3-512": sha3_512,
-    "SHA-512": sha_512,
-    "SHA3-384": sha3_384,
-    "SHA-384": sha_384,
-    "SHA3-256": sha3_256,
-    "SHA-256": sha_256,
-    "SHA3-224": sha3_224,
-    "SHA-224": sha_224,
-    "MD5": md5,
-}
+actions = [
+    HashAction(hashlib.sha3_512),
+    HashAction(hashlib.sha512),
+    HashAction(hashlib.sha3_384),
+    HashAction(hashlib.sha384),
+    HashAction(hashlib.sha3_256),
+    HashAction(hashlib.sha256),
+    HashAction(hashlib.sha3_224),
+    HashAction(hashlib.sha224),
+    HashAction(hashlib.md5),
+]

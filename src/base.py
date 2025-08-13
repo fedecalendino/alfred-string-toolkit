@@ -1,51 +1,42 @@
 import base64
 
-
-def decode(string: str, method: callable, to_upper: bool = False) -> str:
-    if to_upper:
-        string = string.upper()
-
-    digest = method(string)
-    return digest.decode("utf-8")
+from classes import Action
 
 
-def encode(string: str, method: callable) -> str:
-    string = string.encode()
-    digest = method(string)
-    return digest.decode("utf-8")
+class DecodeAction(Action):
+    def __init__(self, name: str, method: callable, to_upper: bool = False):
+        super().__init__(name)
+
+        self.method: callable = method
+        self.to_upper: bool = to_upper
+
+    def __call__(self, string: str) -> str:
+        if self.to_upper:
+            string = string.upper()
+
+        digest = self.method(string)
+        return digest.decode("utf-8")
 
 
-def b64_decode(string: str) -> str:
-    return decode(string + "===", base64.b64decode)
+class EncodeAction(Action):
+    def __init__(self, name: str, method: callable):
+        super().__init__(name)
 
+        self.method: callable = method
 
-def b32_decode(string: str) -> str:
-    return decode(string, base64.b32decode, to_upper=True)
-
-
-def b16_decode(string: str) -> str:
-    return decode(string, base64.b16decode, to_upper=True)
-
-
-def b64_encode(string: str) -> str:
-    return encode(string, base64.b64encode)
-
-
-def b32_encode(string: str) -> str:
-    return encode(string, base64.b32encode)
-
-
-def b16_encode(string: str) -> str:
-    return encode(string, base64.b16encode)
+    def __call__(self, string: str) -> str:
+        string = string.encode()
+        digest = self.method(string)
+        return digest.decode("utf-8")
 
 
 name = "base"
 
-actions = {
-    "b64.decode": b64_decode,
-    "b32.decode": b32_decode,
-    "b16.decode": b16_decode,
-    "b64.encode": b64_encode,
-    "b32.encode": b32_encode,
-    "b16.encode": b16_encode,
-}
+actions = [
+    DecodeAction("b64.decode", base64.b64decode),
+    DecodeAction("b32.decode", base64.b32decode, to_upper=True),
+    DecodeAction("b16.decode", base64.b16decode, to_upper=True),
+    EncodeAction("b64.encode", base64.b64encode),
+    EncodeAction("b32.encode", base64.b32encode),
+    EncodeAction("b16.encode", base64.b16encode),
+]
